@@ -55,6 +55,14 @@ But you're not limited to these—BMGD works with any platform.
 
 ---
 
+## Project Documentation (AI Context)
+
+| Document | Purpose |
+|----------|---------|
+| [Project Overview](./project-overview.md) | Architecture, tech stack, agents, workflows |
+| [Source Tree Analysis](./source-tree-analysis.md) | Annotated directory tree with critical folders |
+| [Development Guide](./development-guide.md) | Prerequisites, scripts, CI/CD, contributing |
+
 ## Community
 
 - **[Discord](https://discord.gg/gk8jAdXWmj)** — Get help from other game devs
