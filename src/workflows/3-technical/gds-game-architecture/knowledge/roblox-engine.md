@@ -1,4 +1,4 @@
-# Roblox Engine Architecture Knowledge
+ в# Roblox Engine Architecture Knowledge
 
 ## Overview
 
@@ -489,6 +489,76 @@ function ObjectPool:Return(obj: Instance)
 end
 
 return ObjectPool
+```
+
+### ECS Pattern (Jecs)
+
+```luau
+--!strict
+-- shared/modules/world.luau  (singleton World shared across systems)
+local jecs = require(game:GetService("ReplicatedStorage").Packages.jecs)
+
+export type World = jecs.World
+export type Entity = jecs.Entity
+
+-- Define components as plain data types (no behaviour)
+local world: World = jecs.World.new()
+
+local Position = world:component() :: jecs.Id<Vector3>
+local Velocity = world:component() :: jecs.Id<Vector3>
+local Health   = world:component() :: jecs.Id<number>
+local Dead     = world:component() :: jecs.Id<boolean>
+
+return {
+	world    = world,
+	Position = Position,
+	Velocity = Velocity,
+	Health   = Health,
+	Dead     = Dead,
+}
+```
+
+```luau
+--!strict
+-- server/systems/MovementSystem.luau
+local RunService = game:GetService("RunService")
+local W = require(game:GetService("ReplicatedStorage").Shared.world)
+
+local function movementSystem(dt: number)
+	-- Query all entities that have both Position and Velocity
+	for entity, position, velocity in W.world:query(W.Position, W.Velocity) do
+		W.world:set(entity, W.Position, position + velocity * dt)
+	end
+end
+
+RunService.Heartbeat:Connect(movementSystem)
+```
+
+```luau
+--!strict
+-- server/systems/HealthSystem.luau
+local W = require(game:GetService("ReplicatedStorage").Shared.world)
+
+local function applyDamage(entity: jecs.Entity, amount: number)
+	local hp = W.world:get(entity, W.Health)
+	if not hp then return end
+	local newHp = math.max(0, hp - amount)
+	W.world:set(entity, W.Health, newHp)
+	if newHp == 0 then
+		W.world:set(entity, W.Dead, true)
+	end
+end
+
+-- Spawn an entity with components
+local function spawnEnemy(spawnPosition: Vector3): jecs.Entity
+	local entity = W.world:entity()
+	W.world:set(entity, W.Position, spawnPosition)
+	W.world:set(entity, W.Velocity, Vector3.zero)
+	W.world:set(entity, W.Health, 100)
+	return entity
+end
+
+return { applyDamage = applyDamage, spawnEnemy = spawnEnemy }
 ```
 
 ## Security Architecture
