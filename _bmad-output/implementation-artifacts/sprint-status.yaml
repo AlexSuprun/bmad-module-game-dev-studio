@@ -52,8 +52,8 @@ development_status:
   # Epic 2: Roblox Decision Catalog & Architecture Patterns
   epic-2: in-progress
   2-1-add-roblox-options-to-decision-catalog-categories: done
-  2-2-add-roblox-common-stacks-and-starter-templates: ready-for-dev
-  2-3-add-roblox-architecture-patterns: backlog
+  2-2-add-roblox-common-stacks-and-starter-templates: review
+  2-3-add-roblox-architecture-patterns: ready-for-dev
   epic-2-retrospective: optional
 
   # Epic 3: Roblox Testing & QA Support
