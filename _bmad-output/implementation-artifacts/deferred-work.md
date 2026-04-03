@@ -1,5 +1,12 @@
 # Deferred Work
 
+## Deferred from: code review of 4-3-update-documentation-site-index-with-roblox (2026-04-04)
+
+- **Site taglines and README omit Roblox** — `website/astro.config.mjs` tagline and `README.md` supported engines section still reference only Unity, Unreal, and Godot. High-visibility discovery surfaces inconsistent with added Roblox support.
+- **`project-overview.md` engine support table may be inconsistent** — Table may still mark Roblox as unsupported across Knowledge/Testing/MCP/Setup Guide columns despite Stories 1–4 completing those items.
+- **`first-game-project.md` tutorial next-steps omits Roblox** — Next-steps section lists only Unity/Unreal/Godot setup guides; new users completing the Quick Flow tutorial won't discover Roblox as an option.
+- **Reference docs cross-link sections omit Roblox** — Sections in `docs/reference/` and `docs/how-to/sprint-planning.md` that enumerate engine setup links do not include Roblox alongside the other three engines.
+
 ## Deferred from: code review of 4-2-create-roblox-setup-guide (2026-04-04)
 
 - **Missing Roblox Studio version requirement in prerequisites** — Roblox Studio auto-updates so pinning a version is non-trivial, but a minimum version note would improve setup reliability.

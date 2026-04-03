@@ -16,6 +16,7 @@ Get started with your preferred game engine:
 - **[Set up a Unity project with BMGD](./setup-unity.md)** — Configure Unity for full production development
 - **[Set up an Unreal project with BMGD](./setup-unreal.md)** — Configure Unreal for full production development
 - **[Set up a Godot project with BMGD](./setup-godot.md)** — Configure Godot for full production development
+- **[Set up a Roblox project with BMGD](./setup-roblox.md)** — Configure Roblox for full production development
 
 ---
 

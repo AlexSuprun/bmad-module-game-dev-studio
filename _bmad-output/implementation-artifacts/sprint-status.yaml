@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-04-03
-last_updated: 2026-04-04  # Story 4.2 done
+last_updated: 2026-04-04  # Story 4.3 done
 project: feat--roblox-support
 project_key: NOKEY
 tracking_system: file-system
@@ -65,5 +65,5 @@ development_status:
   epic-4: in-progress
   4-1-update-agent-skill-md-files-with-roblox-expertise: done
   4-2-create-roblox-setup-guide: done
-  4-3-update-documentation-site-index-with-roblox: ready-for-dev
+  4-3-update-documentation-site-index-with-roblox: done
   epic-4-retrospective: optional
