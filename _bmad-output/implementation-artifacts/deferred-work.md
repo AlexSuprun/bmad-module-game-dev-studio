@@ -1,5 +1,13 @@
 # Deferred Work
 
+## Deferred from: code review of 4-2-create-roblox-setup-guide (2026-04-04)
+
+- **Missing Roblox Studio version requirement in prerequisites** — Roblox Studio auto-updates so pinning a version is non-trivial, but a minimum version note would improve setup reliability.
+- **No Rojo plugin connection troubleshooting** — `rojo serve` step provides no guidance on enabling the Rojo plugin or diagnosing connection failures in Studio; deep troubleshooting out of scope for a how-to guide.
+- **No Studio-Only → Professional migration path** — Tips section warns migration is "non-trivial" but gives no guidance; migration complexity warrants its own how-to article.
+- **MCP Setup section lacks step-by-step enablement instructions** — built-in MCP says "enabled in Roblox Studio settings" without specifying which menu; community MCP says "Creator Store plugin" without install steps. Guide-level detail better suited to a dedicated MCP how-to.
+- **No failure recovery for BMad slash commands (Steps 2–8)** — no guidance on what to do if `/bmgd-generate-project-context` or other commands fail, time out, or produce incomplete output.
+
 ## Deferred from: code review of 4-1-update-agent-skill-md-files-with-roblox-expertise (2026-04-03)
 
 - **Platform lists don't reflect Roblox's platform profile** — all 3 agents still claim "mobile, console, and PC" coverage without acknowledging Roblox's distinct platform profile (Roblox client, web, Xbox). Low-severity wording issue.
