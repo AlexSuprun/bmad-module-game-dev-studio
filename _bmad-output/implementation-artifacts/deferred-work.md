@@ -1,5 +1,13 @@
 # Deferred Work
 
+## Deferred from: code review of 3-1-create-roblox-testing-knowledge-and-register-in-qa-index (2026-04-03)
+
+- **`rokit trust` security implication undocumented** — unconditionally trusts all binaries in rokit.toml without explaining that this bypasses Rokit's signature verification; practitioners should understand the security trade-off before running in CI.
+- **`ok-nick/setup-rokit@v0.1` not pinned to commit SHA** — mutable tag is a supply-chain security risk; all third-party GitHub Actions should be pinned to a full commit digest in production CI templates.
+- **GameAssert.nearlyEqual uses absolute tolerance (0.001) not relative** — default tolerance is misleading for large damage values (hundreds/thousands); add a comment noting it's absolute and guidance on choosing tolerance for the domain.
+- **TestFactory `(defaults :: any)[k] = v` undermines `--!strict`** — accepted Luau idiom for flexible factory functions; no clean alternative without verbose overloads. The `--!strict` annotation at the file top still applies to non-override code paths.
+- **CombatService mock uses plain Lua tables without Instance-method caveat** — valid only when the service is designed for duck-typed inputs; add a one-sentence note that this pattern breaks if the service calls `:FindFirstChild`, `:GetAttribute`, or other Instance methods.
+
 ## Deferred from: code review of 2-3-add-roblox-architecture-patterns (2026-04-03)
 
 - **"roblox server" trigger is ambiguous/low-signal** — infrastructure noun that appears in ordinary Roblox prose; could false-positive on single-player GDDs. Consider replacing with a more deliberate keyword.
