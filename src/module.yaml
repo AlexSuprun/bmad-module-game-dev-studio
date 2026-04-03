@@ -1,4 +1,4 @@
-code: gds
+code: rgds
 name: "BMGD: BMad Game Dev Studio"
 header: "BMad Game Development Studio Module"
 subheader: ""
@@ -51,7 +51,7 @@ project_knowledge:
 
 primary_platform:
   prompt: "Which game development framework or engine do you want to install support for?"
-  default: ["unity", "unreal", "godot", "other"]
+  default: ["unity", "unreal", "godot", "roblox", "other"]
   required: true
   result: "{value}"
   multi-select:
@@ -61,6 +61,8 @@ primary_platform:
       label: "Unreal Engine"
     - value: "godot"
       label: "Godot"
+    - value: "roblox"
+      label: "Roblox"
     - value: "other"
       label: "Custom / Other"
 
