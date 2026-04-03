@@ -354,3 +354,40 @@ So that **I can discover Roblox support and navigate to the setup instructions**
 
 **And** the Quick Start table includes a row: `[Set up Roblox](how-to/setup-roblox.md)` | `Configure Roblox for BMGD`
 **And** the file passes `npm run lint:md`
+
+---
+
+## Review Findings
+
+_Code review of epics (PR: feat/roblox-support vs main) — 2026-04-04_
+
+### Decision Needed
+
+- [ ] [Review][Decision] `module.yaml` `code:` field changed `gds → rgds` — not in spec; all 7 agent manifests still declare `module: gds`, orphaning them from the module. Is this intentional? If yes, manifests must be updated. If not, revert. [src/module.yaml:1]
+- [ ] [Review][Decision] SKILL.md files contain additional path changes (`{project-root}/_bmad/gds/config.yaml` → `{module_config}`) beyond Story 4.1 scope — but the same pattern appears across all ~200 workflow files in the diff. Is this a project-wide intentional template refactor? Story 4.1 AC says "no other content changed in these files." [src/agents/gds-agent-game-dev/SKILL.md, gds-agent-game-qa/SKILL.md, gds-agent-game-solo-dev/SKILL.md]
+- [ ] [Review][Decision] FR4 claims 38 entries across 12 decision catalog categories; Story 2.1 per-category AC lists 30 entries across 11 categories; the codebase (both main and feat branch) has exactly 11 `decision_categories`. Implementation matches Story 2.1 per-category counts (30 entries / 11 categories). Is the "12th category" a spec error, or is an 8-entry category genuinely missing? [src/workflows/3-technical/gds-game-architecture/decision-catalog.yaml]
+- [ ] [Review][Decision] `roblox_avatar_abilities` in `decision-catalog.yaml` has no beta annotation; `roblox_standard` common stack labels it `(beta)`. AvatarAbilities is in Studio Beta (March 2026). Should the catalog option entry be annotated as beta, and/or should the `(beta)` label be removed from the stack? [decision-catalog.yaml lines 83, 342]
+- [ ] [Review][Decision] `docs/index.md` adds a new `## Project Documentation (AI Context)` table (links to project-overview.md, source-tree-analysis.md, development-guide.md) with no story or CHANGELOG coverage. Intentional addition or undocumented scope creep? [docs/index.md]
+
+### Patches
+
+- [ ] [Review][Patch] Stray Cyrillic byte `в` (0xd0 0xb2) before `#` corrupts H1 in roblox-engine.md — must be removed [src/workflows/3-technical/gds-game-architecture/knowledge/roblox-engine.md:1]
+- [ ] [Review][Patch] Wrong Wally install command in setup-roblox.md: `rokit add UnitTesting/Wally` → should be `rokit add UpliftGames/wally` [docs/how-to/setup-roblox.md:77]
+- [ ] [Review][Patch] Wrong TestEZ Wally package identifier in setup-roblox.md: `UnitTesting/TestEZ@0.4.1` → should be `roblox/testez@0.4.1` (consistent with roblox-testing.md) [docs/how-to/setup-roblox.md:256]
+- [ ] [Review][Patch] `marketplace.json` description still reads "Unity, Unreal, and Godot" — Roblox omitted [.claude-plugin/marketplace.json:14]
+- [ ] [Review][Patch] `docs/index.md` frontmatter `description:` is stale — still reads "Unity, Unreal, and Godot", omits Roblox [docs/index.md:3]
+- [ ] [Review][Patch] `module-help.csv` `gds-test-framework` description is outdated — reads "Unity Unreal Engine or Godot", excludes Roblox [src/module-help.csv:23]
+- [ ] [Review][Patch] Frame budget inconsistency: `roblox-testing.md` says 17ms for 60 FPS; `setup-roblox.md` says 16.6ms — 16.67ms is correct; both should align [src/gametest/knowledge/roblox-testing.md vs docs/how-to/setup-roblox.md]
+- [ ] [Review][Patch] `roblox_community_mcp` entry missing v2.5.0 version — spec Additional Requirements mandate "boshyxd/robloxstudio-mcp (39+ tools, v2.5.0)" [src/workflows/3-technical/gds-game-architecture/engine-mcps.yaml]
+- [ ] [Review][Patch] `roblox-testing.md` code examples use `game.ReplicatedStorage` dot-index — contradicts `roblox-engine.md` best practices which explicitly mark this as AVOID; should use `game:GetService("ReplicatedStorage")` [src/gametest/knowledge/roblox-testing.md:63,78,126,155,188,223]
+- [ ] [Review][Patch] `pesde` referenced in `decision-catalog.yaml` (3 places) as alternative to Wally, but not documented anywhere in `roblox-engine.md` — agents will lack knowledge of pesde [src/workflows/3-technical/gds-game-architecture/decision-catalog.yaml:26,251,340]
+- [ ] [Review][Patch] PlayStation launch date contradiction: `roblox-engine.md` says "October 2024"; story dev notes reference "Oct 2023" — one is wrong [src/workflows/3-technical/gds-game-architecture/knowledge/roblox-engine.md:650]
+- [ ] [Review][Patch] `roblox-engine.md` not listed in `workflow.md` knowledge_fragments documentation (runtime dynamic loading still works, but documentation contract is broken) [src/workflows/3-technical/gds-game-architecture/workflow.md:54-57]
+
+### Deferred
+
+- [x] [Review][Defer] `gds-test-framework` workflow has no Roblox branch — Roblox projects silently get no test framework scaffolding [src/workflows/gametest/gds-test-framework/workflow.md] — deferred, already tracked in deferred-work.md
+- [x] [Review][Defer] Game Architect agent (`gds-agent-game-architect/SKILL.md`) not updated to include Roblox expertise — deferred, not in spec scope
+- [x] [Review][Defer] `step-03-starter.md` engine recommendation table has no Roblox row — deferred, not in spec scope
+- [x] [Review][Defer] Sprint status inconsistencies (Story 1.2 shows `ready-for-dev` despite file being committed; Story 2.2 shows `review` despite being complete) — deferred, tracking artifact noise
+- [x] [Review][Defer] Story 2.2 status `review` in sprint-status.yaml despite completion — deferred, tracking artifact noise

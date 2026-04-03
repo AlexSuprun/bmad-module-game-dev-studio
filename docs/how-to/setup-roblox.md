@@ -74,7 +74,7 @@ Choose one of two paths depending on your project needs:
 4. Install and initialize **Wally** (Roblox package manager):
 
    ```
-   rokit add UnitTesting/Wally
+   rokit add UpliftGames/wally
    wally init
    ```
 
@@ -253,7 +253,7 @@ Add TestEZ via Wally by adding to your `wally.toml`:
 
 ```
 [dev-dependencies]
-TestEZ = "UnitTesting/TestEZ@0.4.1"
+TestEZ = "roblox/testez@0.4.1"
 ```
 
 Then run `wally install` to install dependencies.

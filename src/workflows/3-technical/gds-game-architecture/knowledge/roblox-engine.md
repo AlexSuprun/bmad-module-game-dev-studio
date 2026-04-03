@@ -1,4 +1,4 @@
- в# Roblox Engine Architecture Knowledge
+# Roblox Engine Architecture Knowledge
 
 ## Overview
 
@@ -376,7 +376,8 @@ StarterGui/
 | Package | Purpose | Source |
 |---|---|---|
 | **Rojo** | Filesystem-to-Studio sync, enables Git workflows | CLI / Rokit |
-| **Wally** | Package manager for Roblox libraries | CLI / Rokit |
+| **Wally** | Package manager for Roblox libraries (most common) | CLI / Rokit |
+| **pesde** | Modern package manager with lockfile and workspace support (emerging alternative to Wally) | CLI / Rokit |
 | **Selene** | Luau linter for code quality | CLI / Rokit |
 | **StyLua** | Luau code formatter | CLI / Rokit |
 | **Lune** | Standalone Luau runtime for scripts and automation | CLI / Rokit |
@@ -647,7 +648,7 @@ Important caveats:
 
 - **Mobile (iOS/Android):** ~60%+ of players; design touch-primary UI; target 30fps on low-end devices; StreamingEnabled is essential; test on real hardware
 - **Xbox:** Gamepad-only input; must pass Xbox UX certification; use `ContextActionService` for gamepad bindings; full D-pad navigation required throughout all UI
-- **PlayStation (PS4/PS5):** Launched October 2024; gamepad-only; use PS-specific button prompts (cross/circle swap in some regions)
+- **PlayStation (PS4/PS5):** Launched October 2023; gamepad-only; use PS-specific button prompts (cross/circle swap in some regions)
 - **Meta Quest (VR):** Controller and head-tracking input; UI must handle 3D space; Quest is mobile-class hardware; available for users 13+
 - **PC/Mac:** Most capable platform; keyboard and mouse; highest performance budget; still design to the mobile lowest common denominator
 - **Cross-platform UI:** Use `UserInputService.TouchEnabled`, `UserInputService.GamepadEnabled`, and `GuiService:IsTenFootInterface()` to detect context; scale UI with `UIScale` and `AutomaticSize`; show appropriate button prompts per platform

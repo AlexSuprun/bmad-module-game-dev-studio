@@ -1,5 +1,12 @@
 # Deferred Work
 
+## Deferred from: code review of epics (PR review) (2026-04-04)
+
+- **`gds-test-framework` workflow has no Roblox branch** — Roblox projects silently get no test framework scaffolding despite `roblox-testing.md` existing in qa-index. Already tracked in prior deferred-work entries above.
+- **Game Architect agent (`gds-agent-game-architect/SKILL.md`) not updated** — agent runs the architecture workflow that consumes `roblox-engine.md` but does not claim Roblox expertise in its persona. Not in spec scope.
+- **`step-03-starter.md` engine recommendation table has no Roblox row** — users asking "what engine for a massively-multiplayer game?" won't be surfaced Roblox. Not in spec scope.
+- **Sprint status tracking artifacts have stale statuses** — Story 1.2 shows `ready-for-dev` despite file being committed; Story 2.2 shows `review` despite being complete. Tracking artifact noise.
+
 ## Deferred from: code review of 4-3-update-documentation-site-index-with-roblox (2026-04-04)
 
 - **Site taglines and README omit Roblox** — `website/astro.config.mjs` tagline and `README.md` supported engines section still reference only Unity, Unreal, and Godot. High-visibility discovery surfaces inconsistent with added Roblox support.

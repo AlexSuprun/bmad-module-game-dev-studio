@@ -60,7 +60,7 @@ src/
 
 ```luau
 -- src/tests/init.server.luau
-local TestEZ = require(game.ReplicatedStorage.Packages.TestEZ)
+local TestEZ = require(game:GetService("ReplicatedStorage").Packages.TestEZ)
 local testRoot = script.Parent
 
 -- Pass specific subdirectories to avoid scanning shared/ utility modules
@@ -75,7 +75,7 @@ TestEZ.TestBootstrap:run({ testRoot.unit, testRoot.integration }, TestEZ.Reporte
 ```luau
 --!strict
 -- src/tests/unit/DamageCalculator.spec.luau
-local DamageCalculator = require(game.ReplicatedStorage.Shared.Modules.DamageCalculator)
+local DamageCalculator = require(game:GetService("ReplicatedStorage").Shared.Modules.DamageCalculator)
 
 return function()
     describe("DamageCalculator", function()
@@ -123,7 +123,7 @@ TestEZ assertion API:
 --!strict
 return function()
     describe("DamageCalculator parameterized", function()
-        local DamageCalculator = require(game.ReplicatedStorage.Shared.Modules.DamageCalculator)
+        local DamageCalculator = require(game:GetService("ReplicatedStorage").Shared.Modules.DamageCalculator)
         local calculator = DamageCalculator.new()
 
         local scenarios = {
@@ -152,7 +152,7 @@ end
 --!strict
 -- src/tests/unit/WeaponConfig.spec.luau
 -- WeaponConfig is the Roblox equivalent of Godot Resources / Unity ScriptableObjects
-local WeaponConfig = require(game.ReplicatedStorage.Shared.Modules.WeaponConfig)
+local WeaponConfig = require(game:GetService("ReplicatedStorage").Shared.Modules.WeaponConfig)
 
 return function()
     describe("WeaponConfig", function()
@@ -185,7 +185,7 @@ end
 ```luau
 --!strict
 -- src/tests/integration/CombatService.spec.luau
-local CombatService = require(game.ServerScriptService.Services.CombatService)
+local CombatService = require(game:GetService("ServerScriptService").Services.CombatService)
 
 return function()
     describe("CombatService", function()
@@ -220,8 +220,8 @@ end
 ```luau
 --!strict
 -- src/tests/integration/PlayerData.spec.luau
-local MockDataStoreService = require(game.ReplicatedStorage.Packages.MockDataStoreService)
-local PlayerDataService = require(game.ServerScriptService.Services.PlayerDataService)
+local MockDataStoreService = require(game:GetService("ReplicatedStorage").Packages.MockDataStoreService)
+local PlayerDataService = require(game:GetService("ServerScriptService").Services.PlayerDataService)
 
 return function()
     describe("PlayerDataService", function()
@@ -486,7 +486,7 @@ For headless unit tests in CI, use `lune run tests/runner.luau` with the `testez
 
 - Access: **Ctrl+F6** in a running game session
 - Shows a timeline of every frame: rendering, physics, scripts
-- Frame budget: **17ms for 60 FPS target**
+- Frame budget: **16.6ms for 60 FPS target**
 - X-Ray mode for memory allocations; FlameGraphs and Diff FlameGraphs (2024+ update)
 - Script computation target: **< 5ms per frame**
 
@@ -540,7 +540,7 @@ end
 | Issue | Cause | Fix |
 | ----- | ----- | --- |
 | Tests not found | Wrong file suffix | Use `.spec.luau` or `.spec.lua` suffix |
-| `require` fails in test | Module path incorrect | Use `game.ReplicatedStorage.Shared.Modules.X` or relative `script.Parent` paths |
+| `require` fails in test | Module path incorrect | Use `game:GetService("ReplicatedStorage").Shared.Modules.X` or relative `script.Parent` paths |
 | DataStore errors in Studio | API access disabled | Enable "Enable Studio Access to API Services" in Game Settings |
 | Tests hang | Yielding function in test | Avoid `task.wait()` in unit tests; reserve for integration tests only |
 | Inconsistent test results | Shared state between tests | Use `beforeEach` to reset state; never share mutable state between `it` blocks |
