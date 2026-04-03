@@ -1,5 +1,16 @@
 # Deferred Work
 
+## Deferred from: code review of 2-3-add-roblox-architecture-patterns (2026-04-03)
+
+- **"roblox server" trigger is ambiguous/low-signal** — infrastructure noun that appears in ordinary Roblox prose; could false-positive on single-player GDDs. Consider replacing with a more deliberate keyword.
+- **decisions_needed key names don't align with decision_rules keys** — `game_engine` in decisions_needed but `engine_selection` in decision_rules; schema-level mismatch across all patterns.
+- **rendering_pipeline has no decision_rules heuristic block** — gap in decision_rules means rendering decisions are never surfaced programmatically.
+- **ai_system in roblox_multiplayer.decisions_needed has no suggested_stack guidance** — workflow will flag an AI decision as needed but provide zero stack recommendations; spec-level gap.
+- **decision-catalog.yaml still lists profileservice as a valid option** — inline deprecation warning in suggested_stack string is not machine-readable; catalog inconsistency may lead to contradictory recommendations.
+- **"roblox co-op" trigger may overlap with bare "co-op" in realtime_multiplayer** — depends on matching strategy (substring vs exact); could produce two competing architecture stacks for the same query.
+- **Future Lighting recommendation is unqualified for mobile/low-end devices** — unconditional "best visual fidelity" claim is misleading for mobile-targeted Roblox experiences.
+- **MemoryStoreService/MessagingService lack platform quota/rate-limit caveats** — omission could lead to designs that hit Roblox platform limits in production.
+
 ## Deferred from: code review of 1-1-add-roblox-to-engine-selection (2026-04-03)
 
 - Downstream Roblox support gaps identified during review: engine knowledge fragment (`gds-game-architecture`), `decision-catalog.yaml` engine entry, `engine-mcps.yaml` section, test framework workflow branches (gds-test-framework, gds-test-automate, gds-e2e-scaffold, gds-performance-test), `roblox-testing.md` knowledge file, `docs/how-to/setup-roblox.md`, agent persona strings in `gds-agent-game-dev` and `gds-agent-game-qa`, and `architecture-patterns.yaml` heuristic rules. All gaps are tracked in Stories 1.2, 1.3 and Epics 2–4.

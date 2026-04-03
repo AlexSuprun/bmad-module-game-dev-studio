@@ -301,6 +301,47 @@ requirement_patterns:
       - "Ghost replay via input or transform recording"
       - "Multiple camera modes (chase, cockpit, replay)"
 
+  roblox_experience:
+    triggers:
+      - "roblox"
+      - "roblox experience"
+      - "roblox game"
+      - "luau"
+      - "roblox studio"
+    decisions_needed:
+      - game_engine
+      - rendering_pipeline
+      - networking
+      - save_persistence
+      - ui_framework
+      - input_system
+    suggested_stack:
+      - "Roblox Engine with Luau + Rojo + Wally/pesde for project structure and packages"
+      - "Future Lighting for best visual fidelity"
+      - "ProfileStore for persistent data (NOT ProfileService — unmaintained)"
+      - "RemoteEvent + UnreliableRemoteEvent for client-server communication"
+      - "Native ScreenGui or Fusion 0.3 for UI"
+      - "ContextActionService for cross-platform input handling"
+
+  roblox_multiplayer:
+    triggers:
+      - "roblox multiplayer"
+      - "roblox pvp"
+      - "roblox co-op"
+      - "roblox competitive"
+      - "roblox server"
+    decisions_needed:
+      - networking
+      - save_persistence
+      - ai_system
+      - input_system
+    suggested_stack:
+      - "Server-side validation for all gameplay actions (never trust client)"
+      - "ProfileStore with session locking for concurrent server data safety"
+      - "MemoryStoreService for ephemeral cross-server state (queues, leaderboards)"
+      - "MessagingService for cross-server communication"
+      - "UnreliableRemoteEvent for high-frequency position updates"
+
 # Quality attribute patterns
 quality_attributes:
   high_framerate:

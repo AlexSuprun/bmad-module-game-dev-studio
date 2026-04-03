@@ -53,12 +53,12 @@ development_status:
   epic-2: in-progress
   2-1-add-roblox-options-to-decision-catalog-categories: done
   2-2-add-roblox-common-stacks-and-starter-templates: review
-  2-3-add-roblox-architecture-patterns: ready-for-dev
+  2-3-add-roblox-architecture-patterns: done
   epic-2-retrospective: optional
 
   # Epic 3: Roblox Testing & QA Support
-  epic-3: backlog
-  3-1-create-roblox-testing-knowledge-and-register-in-qa-index: backlog
+  epic-3: in-progress
+  3-1-create-roblox-testing-knowledge-and-register-in-qa-index: ready-for-dev
   epic-3-retrospective: optional
 
   # Epic 4: Agent Awareness & Developer Onboarding
