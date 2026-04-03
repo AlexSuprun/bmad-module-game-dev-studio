@@ -1,5 +1,15 @@
 # Deferred Work
 
+## Deferred from: code review of 4-1-update-agent-skill-md-files-with-roblox-expertise (2026-04-03)
+
+- **Platform lists don't reflect Roblox's platform profile** — all 3 agents still claim "mobile, console, and PC" coverage without acknowledging Roblox's distinct platform profile (Roblox client, web, Xbox). Low-severity wording issue.
+- **No Roblox-specific behavior/instruction rules in game-dev or solo-dev** — QA agent gained a TestEZ cross-check instruction, but game-dev and solo-dev agents received only engine-name-list updates with no parallel instructions for Luau, Studio toolchain, or Roblox-specific patterns.
+- **TestEZ may be deprecated** — QA agent now references `Roblox TestEZ documentation` as authoritative, but TestEZ has been deprecated in favor of newer patterns. Should be revisited when updating Roblox testing knowledge.
+- **Workflow files have no Roblox branches** — gds-test-framework, gds-test-automate, gds-e2e-scaffold, gds-test-design, and gds-performance-test all enumerate Unity/Unreal/Godot only; Roblox falls through with no framework initialization, scaffold, or profiling support.
+- **gds-generate-project-context omits Roblox engine detection** — step-01-discover.md and step-02-generate.md lack Roblox file signatures (`.rbxl`, `default.project.json`) and engine-specific rules elicitation.
+- **Architecture step-03-starter.md omits Roblox recommendation** — engine recommendation table has no Roblox row; social/UGC game queries would not surface Roblox as a candidate.
+- **roblox-testing.md not referenced in gds-test-framework workflow load path** — knowledge file exists at `src/gametest/knowledge/roblox-testing.md` but the workflow has no load instruction for it.
+
 ## Deferred from: code review of 3-1-create-roblox-testing-knowledge-and-register-in-qa-index (2026-04-03)
 
 - **`rokit trust` security implication undocumented** — unconditionally trusts all binaries in rokit.toml without explaining that this bypasses Rokit's signature verification; practitioners should understand the security trade-off before running in CI.
