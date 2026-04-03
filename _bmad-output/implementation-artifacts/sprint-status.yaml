@@ -46,12 +46,12 @@ development_status:
   epic-1: in-progress
   1-1-add-roblox-to-engine-selection: done
   1-2-create-roblox-engine-knowledge-file: ready-for-dev
-  1-3-add-roblox-mcp-server-entries: ready-for-dev
+  1-3-add-roblox-mcp-server-entries: done
   epic-1-retrospective: optional
 
   # Epic 2: Roblox Decision Catalog & Architecture Patterns
-  epic-2: backlog
-  2-1-add-roblox-options-to-decision-catalog-categories: backlog
+  epic-2: in-progress
+  2-1-add-roblox-options-to-decision-catalog-categories: ready-for-dev
   2-2-add-roblox-common-stacks-and-starter-templates: backlog
   2-3-add-roblox-architecture-patterns: backlog
   epic-2-retrospective: optional

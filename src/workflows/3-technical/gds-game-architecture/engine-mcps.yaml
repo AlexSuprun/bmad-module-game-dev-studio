@@ -181,6 +181,55 @@ engine_mcps:
         license: "MIT"
         benefit_summary: "AI agents get access to the full Godot documentation for accurate API usage without relying on training data."
 
+  roblox:
+    engine: "Roblox"
+    mcps:
+      roblox_builtin_mcp:
+        name: "Roblox Studio Built-in MCP Server"
+        repo: "N/A (ships with Roblox Studio)"
+        search_term: "Roblox Studio built-in MCP server 2026"
+        description: "Native MCP server built into Roblox Studio, providing direct AI agent access to Studio for code execution, model insertion, play mode control, and 3D mesh generation"
+        capabilities:
+          - "Execute Luau code in Studio"
+          - "Insert models from Creator Store"
+          - "Read console output"
+          - "Start/stop play mode and run scripts in play mode"
+          - "Check Studio mode state"
+          - "Generate textured 3D meshes from text prompts"
+        install_type: "Built into Roblox Studio 2026+ (no separate install for Studio side)"
+        install_steps:
+          - "Ensure Roblox Studio is updated to latest version (2026+)"
+          - "Enable MCP Server in Studio Settings"
+          - "Configure your MCP client (Claude Code, Cursor, etc.) to connect"
+        requirements: "Roblox Studio 2026+ (latest version)"
+        supported_clients: ["Claude Desktop", "Claude Code", "Cursor", "Codex CLI"]
+        license: "Proprietary (Roblox)"
+        benefit_summary: "Zero-install AI agent access to Roblox Studio - code execution, model insertion, play mode control, and 3D mesh generation all built in."
+
+      roblox_community_mcp:
+        name: "Roblox Studio MCP (boshyxd)"
+        repo: "boshyxd/robloxstudio-mcp"
+        search_term: "boshyxd robloxstudio-mcp github"
+        description: "Feature-rich community MCP server with 39+ tools for game hierarchy exploration, script editing, instance manipulation, and build management"
+        capabilities:
+          - "Execute arbitrary Luau code in Studio edit context"
+          - "21 read-only inspector tools (file tree, search, properties, grep scripts)"
+          - "Create, delete, modify, and reparent instances"
+          - "Read, edit, insert, and delete scripts"
+          - "Export/import builds as JSON"
+          - "Creator Store asset integration"
+          - "Undo/redo support"
+          - "Playtest start/monitor/stop with log capture"
+        install_type: "Studio plugin (Creator Store) + Node.js MCP server"
+        install_steps:
+          - "Install Studio plugin from Creator Store or download MCPPlugin.rbxmx from Releases"
+          - "Clone repo and install Node.js MCP server"
+          - "Configure MCP client to connect"
+        requirements: "Roblox Studio, Node.js"
+        supported_clients: ["Claude Desktop", "Claude Code", "Cursor", "Gemini", "Codex CLI"]
+        license: "MIT"
+        benefit_summary: "39+ tools for comprehensive Studio manipulation including read-only inspection mode, build export/import, and script grep - goes beyond the built-in MCP capabilities."
+
   general:
     engine: "Any"
     description: "General-purpose MCPs useful for any game engine"
@@ -218,6 +267,8 @@ recommendation_rules:
     unreal_default: "unreal_mcp"
     godot_default: "godot_mcp_bradypp"
     godot_alternative: "godot_mcp_ee0pdt"
+    roblox_default: "roblox_builtin_mcp"
+    roblox_alternative: "roblox_community_mcp"
 
   recommend_if:
     godot_docs_needed:
