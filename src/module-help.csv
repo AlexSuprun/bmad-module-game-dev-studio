@@ -20,7 +20,7 @@ Game Dev Studio,gds-generate-project-context,Project Context,PC,Create optimized
 Game Dev Studio,gds-game-architecture,Game Architecture,GA,Produce a scale-adaptive game architecture with engine systems networking and technical design.,,3-technical,,,true,planning_artifacts,game architecture
 Game Dev Studio,gds-create-epics-and-stories,Create Epics and Stories,CE,Create the Epics and Stories listing from GDD requirements. These are the specs that drive development.,,3-technical,gds-game-architecture,,true,planning_artifacts,epics and stories
 Game Dev Studio,gds-check-implementation-readiness,Check Implementation Readiness,IR,Ensure GDD UX Architecture and Epics Stories are aligned before production begins.,,3-technical,gds-create-epics-and-stories,,true,planning_artifacts,readiness report
-Game Dev Studio,gds-test-framework,Test Framework,TF,Initialize game test framework architecture for Unity Unreal Engine or Godot projects.,,3-technical,,,false,,
+Game Dev Studio,gds-test-framework,Test Framework,TF,Initialize game test framework architecture for Unity Unreal Engine Godot or Roblox projects.,,3-technical,,,false,,
 Game Dev Studio,gds-test-design,Test Design,TD,Create comprehensive game test scenarios covering gameplay progression and quality requirements.,,3-technical,gds-test-framework,,false,planning_artifacts,test design
 Game Dev Studio,gds-sprint-planning,Sprint Planning,SP,Generate or update sprint-status.yaml from epic files.,,4-production,,,true,implementation_artifacts,sprint status
 Game Dev Studio,gds-sprint-status,Sprint Status,SS,View sprint progress surface risks and get next action recommendation.,,4-production,gds-sprint-planning,,false,,

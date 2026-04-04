@@ -1,6 +1,6 @@
 ---
 title: Welcome
-description: BMad Game Dev Studio - Game development workflows for Unity, Unreal, and Godot
+description: BMad Game Dev Studio - Game development workflows for Unity, Unreal, Godot, and Roblox
 ---
 
 # BMad Game Dev Studio
@@ -16,6 +16,7 @@ BMGD has first-class support for:
 - **[Unity](https://unity.com)** — C# scripting, industry-standard for many game types
 - **[Unreal Engine](https://www.unrealengine.com/)** — Blueprint and C++, AAA powerhouse
 - **[Godot](https://godotengine.org/)** — Open-source, GDScript, rapidly growing
+- **[Roblox](https://www.roblox.com/create)** — Luau scripting, massive multiplayer platform
 
 But you're not limited to these—BMGD works with any platform.
 
@@ -41,6 +42,7 @@ But you're not limited to these—BMGD works with any platform.
 | [Set up Unity](how-to/setup-unity.md) | Configure Unity for BMGD |
 | [Set up Unreal](how-to/setup-unreal.md) | Configure Unreal for BMGD |
 | [Set up Godot](how-to/setup-godot.md) | Configure Godot for BMGD |
+| [Set up Roblox](how-to/setup-roblox.md) | Configure Roblox for BMGD |
 
 ---
 
@@ -54,6 +56,14 @@ But you're not limited to these—BMGD works with any platform.
 | **[Reference](reference/)** | Agents, workflows, and commands |
 
 ---
+
+## Project Documentation (AI Context)
+
+| Document | Purpose |
+|----------|---------|
+| [Project Overview](./project-overview.md) | Architecture, tech stack, agents, workflows |
+| [Source Tree Analysis](./source-tree-analysis.md) | Annotated directory tree with critical folders |
+| [Development Guide](./development-guide.md) | Prerequisites, scripts, CI/CD, contributing |
 
 ## Community
 

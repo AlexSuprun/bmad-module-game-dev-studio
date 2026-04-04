@@ -16,3 +16,4 @@ certification-testing,Platform Certification,"Console TRC/XR requirements and ce
 smoke-testing,Smoke Testing,"Critical path validation for build verification","smoke-tests,bvt,ci",knowledge/smoke-testing.md
 test-priorities,Test Priorities Matrix,"P0-P3 criteria, coverage targets, execution ordering for games","prioritization,risk,coverage",knowledge/test-priorities.md
 e2e-testing,End-to-End Testing,"Complete player journey testing with infrastructure patterns and async utilities","e2e,integration,player-journeys,scenarios,infrastructure",knowledge/e2e-testing.md
+roblox-testing,Roblox TestEZ Testing,"Roblox testing with TestEZ, Studio play mode, MCP automation, and CI pipelines","roblox,testez,unit-tests,integration-tests,ci,luau",knowledge/roblox-testing.md

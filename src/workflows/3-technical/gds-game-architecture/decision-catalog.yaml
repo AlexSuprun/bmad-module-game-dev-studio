@@ -22,6 +22,8 @@ decision_categories:
         pairs_with: ["Rust", "ECS", "wgpu"]
       monogame:
         pairs_with: ["C#", "FNA", "FMOD"]
+      roblox:
+        pairs_with: ["Luau", "Roblox Studio", "Rojo", "Wally", "pesde", "Roblox MCP Server"]
 
   rendering_pipeline:
     triggers: ["graphics", "rendering", "shaders", "visual style", "art style", "2D", "3D", "pixel art"]
@@ -42,6 +44,12 @@ decision_categories:
         pairs_with: ["Godot", "OpenGL", "mobile", "web export"]
       custom_2d:
         pairs_with: ["Phaser", "SDL", "sprite batching", "pixel art"]
+      roblox_future_lighting:
+        pairs_with: ["Roblox", "Future Lighting", "PBR materials", "SurfaceAppearance", "per-pixel lighting", "high-end visuals"]
+      roblox_shadowmap:
+        pairs_with: ["Roblox", "ShadowMap lighting", "shadow-mapped sun", "voxelized local lights", "mid-range hardware"]
+      roblox_compatibility:
+        pairs_with: ["Roblox", "Compatibility lighting", "Voxel lighting", "low-end devices", "legacy content", "mobile-friendly"]
 
   physics_system:
     triggers: ["physics", "collision", "rigid body", "character controller", "raycasting", "platformer movement"]
@@ -58,6 +66,23 @@ decision_categories:
         pairs_with: ["platformers", "raycasting", "kinematic bodies"]
       deterministic:
         pairs_with: ["rollback netcode", "fixed-point math", "lockstep multiplayer"]
+      roblox_constraints:
+        pairs_with:
+          [
+            "Roblox",
+            "AlignPosition",
+            "AlignOrientation",
+            "BallSocketConstraint",
+            "HingeConstraint",
+            "SpringConstraint",
+            "ControllerManager",
+          ]
+      roblox_humanoid:
+        pairs_with: ["Roblox", "Humanoid", "character movement", "WalkSpeed", "JumpPower", "HumanoidStateType"]
+      roblox_avatar_abilities:
+        pairs_with: ["Roblox", "AvatarAbilities", "Luau-based controller", "AbilityManager", "Crouch", "Sprint", "Strafe", "R15"]
+      roblox_custom_controller:
+        pairs_with: ["Roblox", "raycasting", "CFrame manipulation", "custom movement", "physics-free character"]
 
   audio_system:
     triggers: ["audio", "music", "sound effects", "SFX", "adaptive music", "spatial audio", "voice"]
@@ -70,6 +95,21 @@ decision_categories:
         pairs_with: ["Unity", "Unreal", "Godot (via plugin)", "adaptive music", "large projects"]
       wwise:
         pairs_with: ["Unity", "Unreal", "AAA projects", "spatial audio", "large sound libraries"]
+      roblox_audio_api:
+        pairs_with:
+          [
+            "Roblox",
+            "AudioPlayer",
+            "AudioEmitter",
+            "AudioListener",
+            "AudioDeviceOutput",
+            "Wire-based routing",
+            "spatial audio",
+            "AudioLimiter",
+            "AngleAttenuation",
+          ]
+      roblox_soundservice:
+        pairs_with: ["Roblox", "SoundService", "Sound", "SoundGroup", "simple audio", "legacy API"]
 
   networking:
     triggers: ["multiplayer", "online", "netcode", "co-op", "PvP", "lobby", "matchmaking", "dedicated server"]
@@ -92,6 +132,12 @@ decision_categories:
         pairs_with: ["Godot", "MultiplayerAPI", "ENet", "WebSocket"]
       custom_udp:
         pairs_with: ["ENet", "LiteNetLib", "GameServer.io", "custom protocol"]
+      roblox_remotes:
+        pairs_with: ["Roblox", "RemoteEvent", "RemoteFunction", "UnreliableRemoteEvent", "server-authoritative"]
+      knit_networking:
+        pairs_with: ["Roblox", "Knit", "Services", "Controllers", "automatic remote creation", "maintenance-only"]
+      bytenet:
+        pairs_with: ["Roblox", "ByteNet", "buffer serialization", "strict Luau", "optimized networking", "type-safe"]
 
   input_system:
     triggers: ["input", "controls", "controller", "gamepad", "keyboard", "touch", "gesture", "rebinding"]
@@ -108,6 +154,13 @@ decision_categories:
         pairs_with: ["Unity", "advanced controller support", "Steam Input"]
       custom_buffer:
         pairs_with: ["fighting games", "input buffering", "command parsing"]
+      roblox_contextactionservice:
+        pairs_with:
+          ["Roblox", "ContextActionService", "action binding", "priority-based", "mobile buttons", "gamepad", "contextual actions"]
+      roblox_userinputservice:
+        pairs_with: ["Roblox", "UserInputService", "raw input", "InputBegan", "InputEnded", "device detection", "mouse/keyboard"]
+      roblox_proximityprompts:
+        pairs_with: ["Roblox", "ProximityPrompt", "interaction system", "3D world interaction", "gamepad ButtonX"]
 
   ai_system:
     triggers: ["AI", "enemies", "NPC", "behavior", "pathfinding", "navigation", "companion"]
@@ -126,6 +179,12 @@ decision_categories:
         pairs_with: ["Unity NavMesh", "Unreal NavMesh", "Godot NavigationServer", "3D pathfinding"]
       astar_grid:
         pairs_with: ["2D games", "tile-based", "grid pathfinding", "RTS"]
+      roblox_pathfindingservice:
+        pairs_with: ["Roblox", "PathfindingService", "NavigationMesh", "PathWaypoints", "agent parameters", "pathfinding modifiers"]
+      simplepath:
+        pairs_with: ["Roblox", "SimplePath", "wrapper library", "NPC movement", "repetitive pathfinding", "humanoid and non-humanoid"]
+      state_machines_luau:
+        pairs_with: ["Roblox", "Luau state machines", "enemy AI", "NPC behavior", "finite state machines"]
 
   save_persistence:
     triggers: ["save", "load", "persistence", "progress", "cloud save", "save file", "checkpoint"]
@@ -142,6 +201,16 @@ decision_categories:
         pairs_with: ["Steam Cloud", "PSN", "Xbox Cloud", "iCloud", "Google Play"]
       custom_binary:
         pairs_with: ["performance-sensitive", "large worlds", "anti-tamper"]
+      profilestore:
+        pairs_with: ["Roblox", "ProfileStore", "successor to ProfileService", "session locking", "recommended for new projects"]
+      profileservice:
+        pairs_with: ["Roblox", "ProfileService", "session locking", "data loss prevention", "player profiles", "stable but unmaintained"]
+      lapis:
+        pairs_with: ["Roblox", "Lapis", "DataStore wrapper", "promise-based API", "immutability", "save batching", "retries"]
+      datastoreservice_native:
+        pairs_with: ["Roblox", "DataStoreService", "GetAsync", "SetAsync", "UpdateAsync", "simple data", "no wrapper needed"]
+      memorystoreservice:
+        pairs_with: ["Roblox", "MemoryStoreService", "ephemeral data", "matchmaking queues", "leaderboards", "sorted maps"]
 
   ui_framework:
     triggers: ["UI", "HUD", "menu", "inventory screen", "dialogue box", "health bar", "minimap"]
@@ -158,6 +227,12 @@ decision_categories:
         pairs_with: ["Godot", "Control nodes", "themes", "containers"]
       imgui:
         pairs_with: ["debug tools", "dev UI", "any engine via binding"]
+      roblox_native_gui:
+        pairs_with: ["Roblox", "ScreenGui", "Frame", "TextLabel", "UIListLayout", "UIGridLayout", "StarterGui", "no dependencies"]
+      fusion:
+        pairs_with: ["Roblox", "Fusion 0.3", "reactive UI", "declarative", "state management", "contextual values", "memory management"]
+      react_lua:
+        pairs_with: ["Roblox", "React-Lua", "functional components", "hooks", "virtual DOM", "Roblox-maintained", "React 17 based"]
 
   asset_pipeline:
     triggers: ["assets", "textures", "models", "sprites", "animation", "import", "asset bundles", "streaming"]
@@ -172,6 +247,10 @@ decision_categories:
         pairs_with: ["Unreal", "async loading", "streaming levels", "pak files"]
       godot_resource_loader:
         pairs_with: ["Godot", "ResourceLoader", "threaded loading", "PCK files"]
+      roblox_rojo_wally:
+        pairs_with: ["Roblox", "Rojo", "Wally", "pesde", "Git", "VS Code", "filesystem sync", "CI/CD", "professional workflow"]
+      roblox_studio_native:
+        pairs_with: ["Roblox", "Creator Store", "Toolbox", "Packages", "Studio-only workflow", "rapid prototyping"]
 
   deployment_platform:
     triggers: ["platform", "target", "build", "export", "Steam", "console", "mobile", "web"]
@@ -190,6 +269,21 @@ decision_categories:
         pairs_with: ["WebGL", "WebAssembly", "itch.io", "Newgrounds"]
       vr_headset:
         pairs_with: ["OpenXR", "Meta SDK", "SteamVR", "platform store"]
+      roblox_crossplatform:
+        pairs_with:
+          [
+            "Roblox",
+            "PC",
+            "Mac",
+            "iOS",
+            "Android",
+            "Xbox",
+            "PlayStation 4/5",
+            "Meta Quest",
+            "Samsung Galaxy Store",
+            "auto-scaling UI",
+            "StreamingEnabled",
+          ]
 
 # Opinionated stack combinations for common game types
 common_stacks:
@@ -237,6 +331,39 @@ common_stacks:
     name: "VR Game"
     components: ["Unity XR Toolkit or Unreal OpenXR", "OpenXR", "spatial audio", "hand tracking", "fixed foveated rendering"]
     good_for: "VR games, XR experiences, room-scale interaction"
+
+  roblox_standard:
+    name: "Roblox Experience (Standard)"
+    components:
+      - "Roblox Engine"
+      - "Luau"
+      - "Rojo + Wally/pesde + Git"
+      - "Future Lighting"
+      - "Constraint Physics + AvatarAbilities (beta)"
+      - "New Audio API (AudioPlayer + Wire routing)"
+      - "RemoteEvent + UnreliableRemoteEvent"
+      - "ContextActionService"
+      - "PathfindingService + SimplePath"
+      - "ProfileStore"
+      - "Native ScreenGui or Fusion 0.3"
+      - "Cross-platform"
+    good_for: "Roblox multiplayer experiences, obbies, tycoons, simulators, RPGs"
+
+  roblox_simple:
+    name: "Roblox Simple Game"
+    components:
+      - "Roblox Engine"
+      - "Luau"
+      - "Studio-only workflow"
+      - "ShadowMap Lighting"
+      - "Native Humanoid physics"
+      - "SoundService (legacy audio)"
+      - "RemoteEvent"
+      - "ContextActionService"
+      - "DataStoreService (native)"
+      - "Native ScreenGui"
+      - "Creator Store assets"
+    good_for: "Simple games, game jams, learning, obbies, showcases"
 
 # Starter templates and what decisions they pre-make
 starter_templates:
@@ -300,6 +427,18 @@ starter_templates:
     decisions_provided: ["Bevy engine", "Rust language", "ECS architecture", "wgpu renderer"]
     good_for: ["Rust game development", "data-oriented design", "custom pipelines"]
 
+  roblox_standard:
+    name: "Roblox Experience (Rojo)"
+    command_search: "Rojo init + Wally init in empty project directory"
+    decisions_provided: ["Roblox engine", "Luau language", "Rojo filesystem sync", "Wally packages", "client-server architecture"]
+    good_for: ["Roblox multiplayer", "tycoons", "simulators", "RPGs", "professional workflow"]
+
+  roblox_studio_only:
+    name: "Roblox Studio Only"
+    command_search: "Roblox Studio → New Place"
+    decisions_provided: ["Roblox engine", "Luau language", "Studio-only workflow", "built-in tools"]
+    good_for: ["Simple games", "game jams", "learning", "obbies", "showcases"]
+
 # Starter selection heuristics (workflow logic)
 starter_selection_rules:
   by_game_type:
@@ -338,3 +477,7 @@ starter_selection_rules:
     narrative_rpg:
       recommended: ["unity_3d_urp", "unity_2d_urp", "godot_default"]
       considerations: "Yarn Spinner/Ink integration? → Unity or Godot. Dialogue-heavy? → Godot (built-in). AAA RPG? → Unreal"
+
+    roblox_experience:
+      recommended: ["roblox_standard", "roblox_studio_only"]
+      considerations: "Professional team? → Rojo + Wally. Solo/learning? → Studio only. Complex game? → Standard. Game jam? → Studio only"
