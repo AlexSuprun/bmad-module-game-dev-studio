@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-04-03
-last_updated: 2026-04-04  # Story 4.3 done
+last_updated: 2026-04-04  # All stories done
 project: feat--roblox-support
 project_key: NOKEY
 tracking_system: file-system
@@ -43,26 +43,26 @@ story_location: _bmad-output/implementation-artifacts
 
 development_status:
   # Epic 1: Roblox Engine Knowledge & Platform Setup
-  epic-1: in-progress
+  epic-1: done
   1-1-add-roblox-to-engine-selection: done
-  1-2-create-roblox-engine-knowledge-file: ready-for-dev
+  1-2-create-roblox-engine-knowledge-file: done
   1-3-add-roblox-mcp-server-entries: done
   epic-1-retrospective: optional
 
   # Epic 2: Roblox Decision Catalog & Architecture Patterns
-  epic-2: in-progress
+  epic-2: done
   2-1-add-roblox-options-to-decision-catalog-categories: done
-  2-2-add-roblox-common-stacks-and-starter-templates: review
+  2-2-add-roblox-common-stacks-and-starter-templates: done
   2-3-add-roblox-architecture-patterns: done
   epic-2-retrospective: optional
 
   # Epic 3: Roblox Testing & QA Support
-  epic-3: in-progress
+  epic-3: done
   3-1-create-roblox-testing-knowledge-and-register-in-qa-index: done
   epic-3-retrospective: optional
 
   # Epic 4: Agent Awareness & Developer Onboarding
-  epic-4: in-progress
+  epic-4: done
   4-1-update-agent-skill-md-files-with-roblox-expertise: done
   4-2-create-roblox-setup-guide: done
   4-3-update-documentation-site-index-with-roblox: done
